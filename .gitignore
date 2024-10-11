@@ -1,2 +1,5 @@
-/p1/*.csv
+/p1/*.zip
+/p1/dataset.csv
+/p1/test.csv
 /p1/*.pkl
+myenv/
