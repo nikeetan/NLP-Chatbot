@@ -85,9 +85,9 @@ def vectorize_train(training_documents):
     tfidf_train = None
 
     # Write your code here:
-
+    vectorizer = TfidfVectorizer(lowercase=True,tokenizer=get_tokens)
+    tfidf_train = vectorizer.fit_transform(training_documents)
     return vectorizer, tfidf_train
-
 
 # Function: w2v(word2vec, token)
 # word2vec: The pretrained Word2Vec representations as dictionary
@@ -102,9 +102,11 @@ def w2v(word2vec, token):
     word_vector = np.zeros(300,)
 
     # Write your code here:
-
+    if token in word2vec:
+        word_vector = word2vec[token]
     return word_vector
 
+ 
 
 # Function: string2vec(word2vec, user_input)
 # word2vec: The pretrained Word2Vec model
@@ -115,10 +117,12 @@ def w2v(word2vec, token):
 # each token in the string, and averages across those embeddings to produce a
 # single, averaged embedding for the entire input.
 def string2vec(word2vec, user_input):
-    embedding = np.zeros(300,)
-
-    # Write your code here:
-
+    tokens = get_tokens(user_input)
+    embeddings = [w2v(word2vec, token) for token in tokens]
+    if embeddings:
+        embedding = np.mean(embeddings, axis=0)
+    else:
+        embedding = np.zeros(300,)
     return embedding
 
 
@@ -136,8 +140,12 @@ def instantiate_models():
     mlp = None
 
     # Write your code here:
-
+    nb = GaussianNB()
+    logistic = LogisticRegression(max_iter=1000,random_state=100)
+    svm = LinearSVC(random_state=100)
+    mlp = MLPClassifier(max_iter=1000,random_state=100)
     return nb, logistic, svm, mlp
+ 
 
 
 # Function: train_model_tfidf(model, word2vec, training_documents, training_labels)
@@ -150,7 +158,7 @@ def instantiate_models():
 # embeddings for the training documents.
 def train_model_tfidf(model, tfidf_train, training_labels):
     # Write your code here:
-
+    model.fit(tfidf_train.toarray(), training_labels)
     return model
 
 
@@ -165,7 +173,8 @@ def train_model_tfidf(model, tfidf_train, training_labels):
 # embeddings for the training documents.
 def train_model_w2v(model, word2vec, training_documents, training_labels):
     # Write your code here:
-
+    embeddings = [string2vec(word2vec, doc) for doc in training_documents]
+    model.fit(embeddings, training_labels)
     return model
 
 
@@ -187,7 +196,14 @@ def test_model_tfidf(model, vectorizer, test_documents, test_labels):
     accuracy = None
 
     # Write your code here
-
+    tfidf_test = vectorizer.transform(test_documents)
+    predictions = model.predict(tfidf_test.toarray())
+    
+    precision = precision_score(test_labels, predictions)
+    recall = recall_score(test_labels, predictions)
+    f1 = f1_score(test_labels, predictions)
+    accuracy = accuracy_score(test_labels, predictions)
+    
     return precision, recall, f1, accuracy
 
 
@@ -209,7 +225,14 @@ def test_model_w2v(model, word2vec, test_documents, test_labels):
     accuracy = None
 
     # Write your code here
-
+    embeddings = [string2vec(word2vec, doc) for doc in test_documents]
+    predictions = model.predict(embeddings)
+    
+    precision = precision_score(test_labels, predictions)
+    recall = recall_score(test_labels, predictions)
+    f1 = f1_score(test_labels, predictions)
+    accuracy = accuracy_score(test_labels, predictions)
+    
     return precision, recall, f1, accuracy
 
 
