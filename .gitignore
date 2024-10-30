@@ -1,5 +1,4 @@
+*.csv
 /p1/*.zip
-/p1/dataset.csv
-/p1/test.cs
-/p1/*.pkl
-myenv/
+*.pkl
+stanford-corenlp-4.5.7
