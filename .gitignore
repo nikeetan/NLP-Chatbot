@@ -3,3 +3,5 @@
 *.pkl
 stanford-corenlp-4.5.7
 *.DS_Store
+/Proposals
+/p3/TAACO-main

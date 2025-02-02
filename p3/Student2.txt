@@ -1,0 +1,92 @@
+CHATBOT:
+Welcome to the CS 421 chatbot!  What is your name?
+
+USER:
+Hi I am Nishant Ragate
+
+CHATBOT:
+Thanks Hi I!  What do you want to talk about today?
+
+USER:
+I want to complete the homework that i have been doing from a week
+
+CHATBOT:
+Hmm, it seems like you're feeling a bit down.
+
+CHATBOT:
+I'd also like to do a quick stylistic analysis. What's on your mind today?
+
+USER:
+I want to play frisbee but due to challenging weather condition i am unable too
+
+CHATBOT:
+Thanks!  Here's what I discovered about your writing style.
+Type-Token Ratio: 0.9333333333333333
+Average Tokens Per Sentence: 15.0
+# Nominal Subjects: 2
+# Direct Objects: 1
+# Indirect Objects: 0
+# Nominal Modifiers: 0
+# Adjectival Modifiers: 1
+Custom Feature #1: 0.8667
+Custom Feature #2: 4.3333
+
+CHATBOT:
+What would you like to do next?  You can quit, redo the sentiment analysis, or redo the stylistic analysis.
+
+USER:
+redo the sentiment analysi
+
+CHATBOT:
+Thanks Hi I!  What do you want to talk about today?
+
+USER:
+I wanted to talk about the pizza that i had last night
+
+CHATBOT:
+Hmm, it seems like you're feeling a bit down.
+
+CHATBOT:
+What would you like to do next?  You can quit, redo the sentiment analysis, or redo the stylistic analysis.
+
+USER:
+redo the stylistic analysis
+
+CHATBOT:
+I'd also like to do a quick stylistic analysis. What's on your mind today?
+
+USER:
+yeah sure i have exams upcoming and i am planning to visit inida after that
+
+CHATBOT:
+Thanks!  Here's what I discovered about your writing style.
+Type-Token Ratio: 0.9333333333333333
+Average Tokens Per Sentence: 15.0
+# Nominal Subjects: 3
+# Direct Objects: 1
+# Indirect Objects: 0
+# Nominal Modifiers: 0
+# Adjectival Modifiers: 0
+Custom Feature #1: 0.9333
+Custom Feature #2: 4.0667
+
+CHATBOT:
+What would you like to do next?  You can quit, redo the sentiment analysis, or redo the stylistic analysis.
+
+USER:
+sentiment 
+
+CHATBOT:
+Thanks Hi I!  What do you want to talk about today?
+
+USER:
+I have exams comming week and then i want to visit india
+
+CHATBOT:
+It sounds like you're in a positive mood!
+
+CHATBOT:
+What would you like to do next?  You can quit, redo the sentiment analysis, or redo the stylistic analysis.
+
+USER:
+quit
