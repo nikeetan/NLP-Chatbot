@@ -1,6 +1,11 @@
-# Building a Chatbot for Sentiment and Style Analysis
+# Chatbot for Sentiment and Style Analysis
 
 This project involves creating a chatbot designed to analyze the sentiment and style of user-provided natural language input. The chatbot's performance is determined by evaluating various machine learning models, specifically in terms of their accuracy, F1 score, precision, and recall.
+
+# Flow
+<div align="center">
+<img width="741" alt="Screenshot 2025-02-02 at 12 05 14 AM" src="https://github.com/user-attachments/assets/12dd2e48-0d80-4ca4-8862-75ad182758e5" />
+</div>
 
 ## Choosing the Best Model for Training the Chatbot
 
@@ -42,3 +47,69 @@ The table below provides a comparative summary of various models evaluated in th
 ### Summary
 
 The **SVM model with TF-IDF embeddings** demonstrated the highest accuracy and F1 score, making it the most effective model for this chatbot application. This combination of model and representation provides a balanced and accurate analysis of user sentiment.
+
+# Custom Features
+The **custom features** are designed to analyze specific stylistic aspects of user input:  
+- Custom Feature 1 : Computes **lexical diversity** (ratio of unique words to total words), indicating vocabulary richness.  
+- Custom Feature 2 : Calculates the **average word length**, reflecting the complexity or simplicity of the user's writing style.
+
+# Results
+
+### Student Results:
+
+**CHATBOT:** Welcome to the CS 421 chatbot! What is your name?  
+**USER:** Hi I am Niketan Doddamani  
+
+**CHATBOT:** Thanks Hi I! What do you want to talk about today?  
+**USER:** I want to complete the homework that I have been doing from a week  
+
+**CHATBOT:** Hmm, it seems like you're feeling a bit down.  
+**CHATBOT:** I'd also like to do a quick stylistic analysis. What's on your mind today?  
+**USER:** I want to play frisbee but due to challenging weather conditions, I am unable to  
+
+**CHATBOT:** Thanks! Here's what I discovered about your writing style.  
+- Type-Token Ratio: 0.9333333333333333  
+- Average Tokens Per Sentence: 15.0  
+- Nominal Subjects: 2  
+- Direct Objects: 1  
+- Indirect Objects: 0  
+- Nominal Modifiers: 0  
+- Adjectival Modifiers: 1  
+- Custom Feature #1: 0.8667  
+- Custom Feature #2: 4.3333  
+
+**CHATBOT:** What would you like to do next? You can quit, redo the sentiment analysis, or redo the stylistic analysis.  
+**USER:** redo the sentiment analysis  
+
+**CHATBOT:** Thanks Hi I! What do you want to talk about today?  
+**USER:** I wanted to talk about the pizza that I had last night  
+
+**CHATBOT:** Hmm, it seems like you're feeling a bit down.  
+**CHATBOT:** What would you like to do next? You can quit, redo the sentiment analysis, or redo the stylistic analysis.  
+**USER:** redo the stylistic analysis  
+
+**CHATBOT:** I'd also like to do a quick stylistic analysis. What's on your mind today?  
+**USER:** Yeah sure, I have exams upcoming and I am planning to visit India after that  
+
+**CHATBOT:** Thanks! Here's what I discovered about your writing style.  
+- Type-Token Ratio: 0.9333333333333333  
+- Average Tokens Per Sentence: 15.0  
+- Nominal Subjects: 3  
+- Direct Objects: 1  
+- Indirect Objects: 0  
+- Nominal Modifiers: 0  
+- Adjectival Modifiers: 0  
+- Custom Feature #1: 0.9333  
+- Custom Feature #2: 4.0667  
+
+**CHATBOT:** What would you like to do next? You can quit, redo the sentiment analysis, or redo the stylistic analysis.  
+**USER:** sentiment  
+
+**CHATBOT:** Thanks Hi I! What do you want to talk about today?  
+**USER:** I have exams coming week and then I want to visit India  
+
+**CHATBOT:** It sounds like you're in a positive mood!  
+**CHATBOT:** What would you like to do next? You can quit, redo the sentiment analysis, or redo the stylistic analysis.  
+**USER:** quit  
+
+
